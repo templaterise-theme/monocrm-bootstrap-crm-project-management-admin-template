@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonoCRM Login</title>
+  <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+     <div class="d-flex justify-content-center align-items-center vh-100">
+         <div class="auth-card">
+             <div class="logo">
+                 <img src="assets/images/logo.png" alt="CRM Logo">
+             </div>
+             <h2>Welcome Back!</h2>
+             <p class="text-muted">Sign in to your CRM Dashboard</p>
+             <form>
+                 <div class="mb-3 text-start">
+                     <label for="email" class="form-label">Email address</label>
+                     <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                 </div>
+                 <div class="mb-3 text-start">
+                     <div class="d-flex justify-content-between align-items-center">
+                         <label for="password" class="form-label mb-0">Password</label>
+                         <a href="/forgot-password.html" class="link-text text-sm">Forgot password?</a>
+                     </div>
+                     <input type="password" class="form-control" id="password" placeholder="********" required>
+                 </div>
+                 <div class="d-grid gap-2 mb-4">
+                     <button type="submit" class="btn btn-primary">Login</button>
+                 </div>
+                 <div class="link-text">
+                     Don't have an account? <a href="/signup.html">Sign Up</a>
+                 </div>
+             </form>
+         </div>
+     </div>
+</body>
+</html>

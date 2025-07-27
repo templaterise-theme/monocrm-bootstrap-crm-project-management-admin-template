@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat - CRM Admin Dashboard</title>
+    <!-- Stylesheets -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/plugin/datatable/datatables.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/chat.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+                <!-- Sidebar -->
+               <div class="sidebar-header">
+                   <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" class="large-logo-img" alt="logo large"></a></div>
+                   <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" class="small-logo-img" alt="logo small"></a></div>
+               </div>
+               <div class="sidebar-body  custom-scrollbar">
+                     <ul class="sidebar-menu">
+                        <li><a href="index.html" class=" sidebar-link"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
+                        <li><a href="customer.html" class="sidebar-link"><i class="fa-solid fa-users"></i><p>Customer</p></a></li>
+                        <li><a href="board.html" class=" sidebar-link"><i class="fa-regular fa-clipboard"></i><p>Board</p></a></li>
+                        <li><a href="project.html" class=" sidebar-link"><i class="fa-solid fa-building"></i><p>Project</p></a></li>
+                        <li><a href="department.html" class=" sidebar-link"><i class="fa-solid fa-chalkboard-user"></i><p>Department</p></a></li>
+                        <li><a href="chat.html" class=" sidebar-link active"><i class="fa-solid fa-comment"></i><p>Chat</p></a></li>
+                        <li><a href="calender.html" class=" sidebar-link"><i class="fa-regular fa-calendar-days"></i><p>Calendar</p></a></li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-envelope"></i><p>Mailbox <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="email.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Eamil</p></a></li>
+                                <li><a href="view-email.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">View</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-brands fa-pagelines"></i><p>Pages <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Login</p></a></li>
+                                <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Register</p></a></li>
+                                <li><a href="forgot-password.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Forgot password</p></a></li>
+                                <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">404 page</p></a></li>
+                                <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">500 page</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-table"></i><p>Table <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="table-bootstrap.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Bootstrap</p></a></li>
+                                <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">DataTable</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Components <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Form Element</p></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+               </div>
+        </div>
+         <!-- Header -->
+         <div class="header d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+              <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="d-none d-md-block d-lg-block">
+                  <div class="input-group flex-nowrap">
+                      <span class="input-group-text" id="addon-wrapping"><i class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+                      <input type="text" class="form-control search-input border-l-none ps-0 remove-focus" placeholder="Search anything" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex align-items-center">
+              <ul class="nav d-flex align-items-center">
+                  <!-- Messages Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 position-relative header-nav-item"  role="button" 
+                        data-bs-toggle="dropdown" 
+                        data-bs-offset="0,0" 
+                        aria-expanded="false">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23.0753 13.2492H19.3053C18.2437 13.2492 17.3012 13.8342 16.8245 14.7875L15.9145 16.5858C15.6978 17.0192 15.2645 17.29 14.7878 17.29H11.2345C10.8987 17.29 10.422 17.2142 10.1078 16.5858L9.19782 14.7983C8.72116 13.8558 7.76783 13.26 6.71699 13.26H2.92533C2.50283 13.26 2.16699 13.5958 2.16699 14.0183V17.55C2.16699 21.4825 4.52866 23.8333 8.47199 23.8333H17.5503C21.2662 23.8333 23.552 21.7967 23.8337 18.1783V14.0075C23.8337 13.5958 23.4978 13.2492 23.0753 13.2492Z" fill="#358AEC"/>
+                          <path d="M13.8125 2.16667C13.8125 1.7225 13.4442 1.35417 13 1.35417C12.5558 1.35417 12.1875 1.7225 12.1875 2.16667V4.33333H13.8125V2.16667Z" fill="#358AEC"/>
+                          <path d="M23.8337 10.6275V11.7542C23.5953 11.6675 23.3353 11.6242 23.0753 11.6242H19.3053C17.6262 11.6242 16.1203 12.5558 15.3728 14.0508L14.5603 15.6542H11.462L10.6495 14.0617C9.90199 12.5558 8.39616 11.6242 6.71699 11.6242H2.92533C2.66533 11.6242 2.40533 11.6675 2.16699 11.7542V10.6275C2.16699 6.68417 4.51783 4.33333 8.46116 4.33333H12.1878V7.78917L11.4078 7.00917C11.0937 6.695 10.5737 6.695 10.2595 7.00917C9.94533 7.32333 9.94533 7.84333 10.2595 8.1575L12.4262 10.3242C12.437 10.335 12.4478 10.335 12.4478 10.3458C12.5237 10.4108 12.5995 10.465 12.6862 10.4975C12.7945 10.5408 12.892 10.5625 13.0003 10.5625C13.1087 10.5625 13.2062 10.5408 13.3037 10.4975C13.4012 10.465 13.4987 10.4 13.5745 10.3242L15.7412 8.1575C16.0553 7.84333 16.0553 7.32333 15.7412 7.00917C15.427 6.695 14.907 6.695 14.5928 7.00917L13.8128 7.78917V4.33333H17.5395C21.4828 4.33333 23.8337 6.68417 23.8337 10.6275Z" fill="#358AEC"/>
+                        </svg>
+                        <!-- <i class="fa-regular fa-message font-size-20"></i> -->
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Chat Timeline -->
+                              <ul class="timeline">
+                                  <!-- Item 1 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">We talked about a project...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 30 min ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 2 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-2.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">You sent an email to the client...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 1 hour ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 3 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-3.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Meeting with the design team...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 hours ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 4 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-4.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Reviewed the project documents...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> Yesterday</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 5 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-5.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Finalized the project timeline...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 days ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          <a class="all-notification" href="#">See all message <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                  <!-- Notifications Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 notification header-nav-item" 
+                          role="button" 
+                          data-bs-toggle="dropdown" 
+                          data-bs-offset="0,0" 
+                          aria-expanded="false">
+                          <i class="fa-regular fa-bell font-size-24"></i>
+                          <div class="marker"></div>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Notifications Timeline -->
+                              <ul class="timeline">
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Smith uploaded a new report</h6>
+                                              <small class="d-block">10 December 2023 - 08:15 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-info">
+                                              AP
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">New Appointment Scheduled</h6>
+                                              <small class="d-block">10 December 2023 - 09:45 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-success">
+                                              <i class="fa fa-check-circle"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Patient checked in at reception</h6>
+                                              <small class="d-block">10 December 2023 - 10:20 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Alice shared a prescription</h6>
+                                              <small class="d-block">10 December 2023 - 11:00 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-danger">
+                                              EM
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Emergency Alert: Critical Patient</h6>
+                                              <small class="d-block">10 December 2023 - 11:30 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-primary">
+                                              <i class="fa fa-calendar-alt"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Next Appointment Reminder</h6>
+                                              <small class="d-block">10 December 2023 - 12:00 PM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                              
+                          </div>
+                          <a class="all-notification" href="#">See all notifications <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                   <!-- User Profile -->
+                  <li class="nav-item dropdown user-profile">
+                      <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="./assets/images/avatar-6.png" class="chat-user-avatar" alt="">
+                          <div>
+                              <ul class="dropdown-menu mt-3">
+                                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+       <!-- Content Wrapper -->
+       <div class="content-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+    <div class="whatsapp-container">
+        <!-- Sidebar -->
+        <div class="chat-sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="chat-sidebar-header">
+                <div class="chat-user-avatar">ME</div>
+                <div class="chat-sidebar-actions">
+                    <!--
+                    <i class="fas fa-ellipsis-v" title="Menu"></i> -->
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="search-container">
+                <div class="chat-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="chat-search-input" placeholder="Search or start new chat">
+                </div>
+            </div>
+
+            <!-- Chat List -->
+            <div class="chat-list">
+                <div class="chat-item active" data-name="John Doe" data-avatar="JD" data-status="Online" data-gradient="#ff6b6b, #feca57">
+                    <div class="chat-avatar-container">
+                        <div class="chat-avatar">JD</div>
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">John Doe</div>
+                            <div class="chat-time">2:30 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Hey! How are you doing? 😊</div>
+                            <div class="unread-count">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Sarah Wilson" data-avatar="SW" data-status="Last seen today at 1:45 PM" data-gradient="#e74c3c, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">SW</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Sarah Wilson</div>
+                            <div class="chat-time">1:45 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Thanks for the help earlier!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Team Group" data-avatar="TG" data-status="5 members" data-gradient="#9b59b6, #3498db">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #9b59b6, #3498db);">TG</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Team Group</div>
+                            <div class="chat-time">12:30 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Mike: Let's schedule the meeting</div>
+                            <div class="unread-count">7</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Alex Johnson" data-avatar="AJ" data-status="Last seen yesterday at 11:20 PM" data-gradient="#1abc9c, #16a085">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #1abc9c, #16a085);">AJ</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Alex Johnson</div>
+                            <div class="chat-time">Yesterday</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Perfect! See you tomorrow 👍</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Emma Davis" data-avatar="ED" data-status="Last seen 2 days ago" data-gradient="#f1c40f, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #f1c40f, #f39c12);">ED</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Emma Davis</div>
+                            <div class="chat-time">2 days ago</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Can you send me the documents?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Family Group" data-avatar="FG" data-status="8 members" data-gradient="#e67e22, #d35400">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e67e22, #d35400);">FG</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Family Group</div>
+                            <div class="chat-time">3 days ago</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Mom: Don't forget dinner on Sunday!</div>
+                            <div class="unread-count">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Mike Chen" data-avatar="MC" data-status="Last seen 5 hours ago" data-gradient="#2ecc71, #27ae60">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #2ecc71, #27ae60);">MC</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Mike Chen</div>
+                            <div class="chat-time">10:15 AM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Great work on the presentation!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Lisa Park" data-avatar="LP" data-status="Online" data-gradient="#8e44ad, #9b59b6">
+                    <div class="chat-avatar-container">
+                        <div class="chat-avatar" style="background: linear-gradient(45deg, #8e44ad, #9b59b6);">LP</div>
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Lisa Park</div>
+                            <div class="chat-time">9:45 AM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Let's catch up soon! 🎨</div>
+                            <div class="unread-count">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat" id="mainChat">
+            <!-- Welcome Screen (shown when no chat is selected) -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-logo">
+                    <i class="fa-solid fa-comment"></i>
+                </div>
+                <h1 class="welcome-title">ChatApp Web</h1>
+                <p class="welcome-subtitle">
+                    Send and receive messages without keeping your phone online.<br>
+                    Use ChatApp on up to 4 linked devices and 1 phone at the same time.
+                </p>
+            </div>
+
+            <!-- Chat Interface (hidden by default) -->
+            <div class="chat-interface" id="chatInterface" style="display: none; flex-direction: column; height: 100%;">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <i class="fas fa-arrow-left back-btn" id="backBtn" title="Back"></i>
+                        <div class="chat-user-avatar" id="chatAvatar">JD</div>
+                        <div class="chat-user-details">
+                            <h3 id="chatName">John Doe</h3>
+                            <div class="chat-user-status" id="chatStatus">Online</div>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <i class="fas fa-search" id="searchToggleBtn" title="Search in chat"></i>
+                        <i class="fas fa-ellipsis-v" id="chatMenuBtn" title="Menu"></i>
+                        
+                        <!-- Chat Menu Dropdown -->
+                        <div class="chat-dropdown-menu" id="chatDropdownMenu">
+                            <div class="dropdown-item" id="clearChatBtn">
+                                <i class="fas fa-broom"></i>
+                                Clear chat
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item danger" id="closeChatBtn">
+                                <i class="fas fa-times-circle"></i>
+                                Close chat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Search Container -->
+                <div class="chat-search-container" id="chatSearchContainer">
+                    <div class="chat-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="chat-search-input" id="chatSearchInput" placeholder="Search messages">
+                    </div>
+                    <div class="search-navigation">
+                        <div class="search-count" id="searchCount">0 of 0</div>
+                        <button class="search-nav-btn" id="prevSearchBtn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <button class="search-nav-btn" id="nextSearchBtn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <button class="close-search-btn" id="closeSearchBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Reply Bar -->
+                <div class="reply-bar" id="replyBar">
+                    <div class="reply-bar-header">
+                        <div class="reply-bar-title">Replying to <span id="replyToName"></span></div>
+                        <button class="reply-bar-close" id="replyBarClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="reply-bar-content" id="replyBarContent"></div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message received" data-message-id="1">
+                        <div class="message-bubble">
+                            <div class="message-content">Hey! How are you doing today? 😊</div>
+                            <div class="message-time">2:30 PM</div>
+                         <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                         </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="message sent" data-message-id="2">
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="message-bubble">
+                            <div class="message-content">I'm doing great! Just working on some new projects. How about you?</div>
+                            <div class="message-time">
+                                2:32 PM
+                                <i class="fas fa-check-double message-status"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message received" data-message-id="3">
+                        <div class="message-bubble">
+                            <div class="message-content">That sounds awesome! I'd love to hear more about your projects sometime. 🚀</div>
+                            <div class="message-time">2:33 PM</div>
+                            <div class="message-reactions">
+                                <div class="reaction">
+                                    <span class="reaction-emoji">👍</span>
+                                    <span class="reaction-count">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message sent" data-message-id="4">
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="message-bubble">
+                            <div class="message-content">Let's catch up over coffee this weekend? ☕</div>
+                            <div class="message-time">
+                                2:35 PM
+                                <i class="fas fa-check-double message-status"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message received" data-message-id="5">
+                        <div class="message-bubble">
+                            <div class="message-content">Perfect! Saturday works for me. Looking forward to it! 🎉</div>
+                            <div class="message-time">2:36 PM</div>
+                        </div>
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <span class="typing-text">typing</span>
+                        <div class="typing-dots">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="input-actions">
+                        <i class="fas fa-smile emoji-btn" title="Emoji"></i>
+                        <label for="fileInput" style="cursor: pointer;">
+                            <i class="fas fa-paperclip" title="Attach File"></i>
+                        </label>
+                        <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
+                    </div>
+                    <div class="message-input-wrapper">
+                        <input type="text" class="message-input" placeholder="Type a message" id="messageInput">
+                    </div>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-item" id="replyOption">
+            <i class="fas fa-reply"></i>
+            Reply
+        </div>
+        <div class="context-menu-item" id="copyOption">
+            <i class="fas fa-copy"></i>
+            Copy
+        </div>
+        <div class="context-menu-item danger" id="deleteOption">
+            <i class="fas fa-trash"></i>
+            Delete
+        </div>
+    </div>
+
+        </div>
+         <!-- Footer -->
+         <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+            <p class="m-0">Copyright © 2024. All Rights Reserved. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >Themes By TemplateRise</a></p>
+        </div>
+        </div>
+
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/plugin/datatable/datatables.min.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
+    <script  src="./assets/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Details - CRM Admin Dashboard</title>
+    <!-- Stylesheets -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/plugin/datatable/datatables.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+                <!-- Sidebar -->
+               <div class="sidebar-header">
+                   <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" class="large-logo-img" alt="logo large"></a></div>
+                   <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" class="small-logo-img" alt="logo small"></a></div>
+               </div>
+               <div class="sidebar-body  custom-scrollbar">
+                     <ul class="sidebar-menu">
+                        <li><a href="index.html" class=" sidebar-link"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
+                        <li><a href="customer.html" class="sidebar-link"><i class="fa-solid fa-users"></i><p>Customer</p></a></li>
+                        <li><a href="board.html" class=" sidebar-link"><i class="fa-regular fa-clipboard"></i><p>Board</p></a></li>
+                        <li><a href="project.html" class=" sidebar-link active"><i class="fa-solid fa-building"></i><p>Project</p></a></li>
+                        <li><a href="department.html" class=" sidebar-link"><i class="fa-solid fa-chalkboard-user"></i><p>Department</p></a></li>
+                        <li><a href="chat.html" class=" sidebar-link"><i class="fa-solid fa-comment"></i><p>Chat</p></a></li>
+                        <li><a href="calender.html" class=" sidebar-link"><i class="fa-regular fa-calendar-days"></i><p>Calendar</p></a></li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-envelope"></i><p>Mailbox <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="email.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Eamil</p></a></li>
+                                <li><a href="view-email.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">View</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-brands fa-pagelines"></i><p>Pages <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Login</p></a></li>
+                                <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Register</p></a></li>
+                                <li><a href="forgot-password.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Forgot password</p></a></li>
+                                <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">404 page</p></a></li>
+                                <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">500 page</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-table"></i><p>Table <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="table-bootstrap.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Bootstrap</p></a></li>
+                                <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">DataTable</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Components <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Form Element</p></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+               </div>
+        </div>
+         <!-- Header -->
+        <div class="header d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+              <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="d-none d-md-block d-lg-block">
+                  <div class="input-group flex-nowrap">
+                      <span class="input-group-text" id="addon-wrapping"><i class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+                      <input type="text" class="form-control search-input border-l-none ps-0 remove-focus" placeholder="Search anything" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex align-items-center">
+              <ul class="nav d-flex align-items-center">
+                  <!-- Messages Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 position-relative header-nav-item"  role="button" 
+                        data-bs-toggle="dropdown" 
+                        data-bs-offset="0,0" 
+                        aria-expanded="false">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23.0753 13.2492H19.3053C18.2437 13.2492 17.3012 13.8342 16.8245 14.7875L15.9145 16.5858C15.6978 17.0192 15.2645 17.29 14.7878 17.29H11.2345C10.8987 17.29 10.422 17.2142 10.1078 16.5858L9.19782 14.7983C8.72116 13.8558 7.76783 13.26 6.71699 13.26H2.92533C2.50283 13.26 2.16699 13.5958 2.16699 14.0183V17.55C2.16699 21.4825 4.52866 23.8333 8.47199 23.8333H17.5503C21.2662 23.8333 23.552 21.7967 23.8337 18.1783V14.0075C23.8337 13.5958 23.4978 13.2492 23.0753 13.2492Z" fill="#358AEC"/>
+                          <path d="M13.8125 2.16667C13.8125 1.7225 13.4442 1.35417 13 1.35417C12.5558 1.35417 12.1875 1.7225 12.1875 2.16667V4.33333H13.8125V2.16667Z" fill="#358AEC"/>
+                          <path d="M23.8337 10.6275V11.7542C23.5953 11.6675 23.3353 11.6242 23.0753 11.6242H19.3053C17.6262 11.6242 16.1203 12.5558 15.3728 14.0508L14.5603 15.6542H11.462L10.6495 14.0617C9.90199 12.5558 8.39616 11.6242 6.71699 11.6242H2.92533C2.66533 11.6242 2.40533 11.6675 2.16699 11.7542V10.6275C2.16699 6.68417 4.51783 4.33333 8.46116 4.33333H12.1878V7.78917L11.4078 7.00917C11.0937 6.695 10.5737 6.695 10.2595 7.00917C9.94533 7.32333 9.94533 7.84333 10.2595 8.1575L12.4262 10.3242C12.437 10.335 12.4478 10.335 12.4478 10.3458C12.5237 10.4108 12.5995 10.465 12.6862 10.4975C12.7945 10.5408 12.892 10.5625 13.0003 10.5625C13.1087 10.5625 13.2062 10.5408 13.3037 10.4975C13.4012 10.465 13.4987 10.4 13.5745 10.3242L15.7412 8.1575C16.0553 7.84333 16.0553 7.32333 15.7412 7.00917C15.427 6.695 14.907 6.695 14.5928 7.00917L13.8128 7.78917V4.33333H17.5395C21.4828 4.33333 23.8337 6.68417 23.8337 10.6275Z" fill="#358AEC"/>
+                        </svg>
+                        <!-- <i class="fa-regular fa-message font-size-20"></i> -->
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Chat Timeline -->
+                              <ul class="timeline">
+                                  <!-- Item 1 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">We talked about a project...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 30 min ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 2 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-2.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">You sent an email to the client...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 1 hour ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 3 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-3.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Meeting with the design team...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 hours ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 4 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-4.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Reviewed the project documents...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> Yesterday</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 5 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-5.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Finalized the project timeline...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 days ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          <a class="all-notification" href="#">See all message <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                  <!-- Notifications Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 notification header-nav-item" 
+                          role="button" 
+                          data-bs-toggle="dropdown" 
+                          data-bs-offset="0,0" 
+                          aria-expanded="false">
+                          <i class="fa-regular fa-bell font-size-24"></i>
+                          <div class="marker"></div>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Notifications Timeline -->
+                              <ul class="timeline">
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Smith uploaded a new report</h6>
+                                              <small class="d-block">10 December 2023 - 08:15 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-info">
+                                              AP
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">New Appointment Scheduled</h6>
+                                              <small class="d-block">10 December 2023 - 09:45 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-success">
+                                              <i class="fa fa-check-circle"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Patient checked in at reception</h6>
+                                              <small class="d-block">10 December 2023 - 10:20 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Alice shared a prescription</h6>
+                                              <small class="d-block">10 December 2023 - 11:00 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-danger">
+                                              EM
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Emergency Alert: Critical Patient</h6>
+                                              <small class="d-block">10 December 2023 - 11:30 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-primary">
+                                              <i class="fa fa-calendar-alt"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Next Appointment Reminder</h6>
+                                              <small class="d-block">10 December 2023 - 12:00 PM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                              
+                          </div>
+                          <a class="all-notification" href="#">See all notifications <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                   <!-- User Profile -->
+                  <li class="nav-item dropdown user-profile">
+                      <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="./assets/images/avatar-6.png" class="user-avatar" alt="">
+                          <div>
+                              <ul class="dropdown-menu mt-3">
+                                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+        </div>
+       <!-- Content Wrapper -->
+       <div class="content-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-lg-center  flex-column flex-md-row flex-lg-row mt-3">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-2 text-color-2 font-size-22">Project Details</h3>
+                        </div>
+                        <div class="mt-3 mt-lg-0">
+                            <div class="d-flex align-items-center">
+                               <a href="project.html" class="cursor-pointer ms-4 bg-white bg-primary text-white d-flex align-items-center px-3 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">
+                                <i class="fa-solid fa-arrow-left me-3"></i>
+                                 Back
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-sm border-0 p-0 mt-4">
+                <div class="card-body">
+                    <div class="row align-items-start mb-4">
+                        <div class="col">
+                            <h1 class="display-6 fw-bold text-dark mb-2">Website Redesign</h1>
+                            <p class="text-muted fs-5">Complete redesign of company website with modern UI/UX principles and responsive design implementation</p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex gap-2">
+                                <span class="badge status-active px-3 py-2">Active</span>
+                                <span class="badge status-high-priority px-3 py-2">High Priority</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Stats -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="h2 fw-bold text-primary mb-1">75%</div>
+                            <div class="small text-muted">Progress</div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="h2 fw-bold text-dark mb-1">18/24</div>
+                            <div class="small text-muted">Tasks Complete</div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="h2 fw-bold text-success mb-1">5</div>
+                            <div class="small text-muted">Team Members</div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="h2 fw-bold text-warning mb-1">12</div>
+                            <div class="small text-muted">Days Left</div>
+                        </div>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div>
+                        <div class="d-flex justify-content-between small text-muted mb-2">
+                            <span>Overall Progress</span>
+                            <span>75% Complete</span>
+                        </div>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row g-4 mt-3">
+                <!-- Left Column -->
+                <div class="col-lg-8">
+                    <!-- Project Timeline -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Project Timeline</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Project Kickoff</h6>
+                                            <p class="text-muted small mb-0">Initial project planning and team alignment meeting completed</p>
+                                        </div>
+                                        <span class="text-muted small">Jan 15, 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Requirements Gathering</h6>
+                                            <p class="text-muted small mb-0">Stakeholder interviews and requirement documentation completed</p>
+                                        </div>
+                                        <span class="text-muted small">Jan 18, 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Design Phase</h6>
+                                            <p class="text-muted small mb-0">Wireframes and mockups created and approved by stakeholders</p>
+                                        </div>
+                                        <span class="text-muted small">Jan 22, 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot current"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1">Development Phase</h6>
+                                            <p class="text-muted small mb-0">Frontend and backend development currently underway</p>
+                                        </div>
+                                        <span class="text-primary small fw-semibold">In Progress</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot pending"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1 text-muted">Testing & QA</h6>
+                                            <p class="text-muted small mb-0">Comprehensive testing and quality assurance phase</p>
+                                        </div>
+                                        <span class="text-muted small">Feb 10, 2024</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-dot pending"></div>
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-semibold mb-1 text-muted">Launch</h6>
+                                            <p class="text-muted small mb-0">Website deployment and go-live</p>
+                                        </div>
+                                        <span class="text-muted small">Feb 15, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasks Section -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Tasks</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <!-- Task Item -->
+                            <div class="p-3 border-bottom">
+                                <div class="d-flex align-items-start">
+                                    <input type="checkbox" checked class="form-check-input me-3 mt-1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="mb-0 task-completed">Create Homepage Wireframes</h6>
+                                            <span class="badge bg-success">Completed</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">Design initial wireframes for the homepage layout</p>
+                                        <div class="d-flex gap-3 small text-muted">
+                                            <span><i class="fas fa-user me-1"></i>Sarah Johnson</span>
+                                            <span><i class="fas fa-calendar me-1"></i>Jan 20, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 border-bottom">
+                                <div class="d-flex align-items-start">
+                                    <input type="checkbox" class="form-check-input me-3 mt-1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="mb-0">Implement Responsive Navigation</h6>
+                                            <span class="badge bg-primary">In Progress</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">Develop mobile-responsive navigation component</p>
+                                        <div class="d-flex gap-3 small text-muted">
+                                            <span><i class="fas fa-user me-1"></i>Michael Chen</span>
+                                            <span><i class="fas fa-calendar me-1"></i>Jan 25, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 border-bottom">
+                                <div class="d-flex align-items-start">
+                                    <input type="checkbox" class="form-check-input me-3 mt-1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="mb-0">Content Management System Integration</h6>
+                                            <span class="badge bg-warning text-dark">Pending</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">Integrate CMS for easy content updates</p>
+                                        <div class="d-flex gap-3 small text-muted">
+                                            <span><i class="fas fa-user me-1"></i>David Wilson</span>
+                                            <span><i class="fas fa-calendar me-1"></i>Jan 30, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 border-bottom">
+                                <div class="d-flex align-items-start">
+                                    <input type="checkbox" class="form-check-input me-3 mt-1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="mb-0">SEO Optimization</h6>
+                                            <span class="badge bg-danger">High Priority</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">Implement SEO best practices and meta tags</p>
+                                        <div class="d-flex gap-3 small text-muted">
+                                            <span><i class="fas fa-user me-1"></i>Emily Rodriguez</span>
+                                            <span><i class="fas fa-calendar me-1"></i>Feb 5, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3">
+                                <div class="d-flex align-items-start">
+                                    <input type="checkbox" class="form-check-input me-3 mt-1">
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="mb-0">Performance Testing</h6>
+                                            <span class="badge bg-secondary">Not Started</span>
+                                        </div>
+                                        <p class="text-muted small mb-2">Conduct performance testing and optimization</p>
+                                        <div class="d-flex gap-3 small text-muted">
+                                            <span><i class="fas fa-user me-1"></i>Sarah Johnson</span>
+                                            <span><i class="fas fa-calendar me-1"></i>Feb 8, 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" alt="User" class="rounded-circle me-3" width="32" height="32">
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1"><span class="fw-semibold">Sarah Johnson</span> completed task "Create Homepage Wireframes"</p>
+                                    <p class="text-muted small mb-0">2 hours ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start mb-3">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User" class="rounded-circle me-3" width="32" height="32">
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1"><span class="fw-semibold">Michael Chen</span> started working on "Responsive Navigation"</p>
+                                    <p class="text-muted small mb-0">4 hours ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start mb-3">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="User" class="rounded-circle me-3" width="32" height="32">
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1"><span class="fw-semibold">Emily Rodriguez</span> uploaded new design assets</p>
+                                    <p class="text-muted small mb-0">1 day ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="User" class="rounded-circle me-3" width="32" height="32">
+                                <div class="flex-grow-1">
+                                    <p class="small mb-1"><span class="fw-semibold">David Wilson</span> commented on "CMS Integration" task</p>
+                                    <p class="text-muted small mb-0">2 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-4">
+                    <!-- Project Info -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Project Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="small fw-semibold text-muted">Start Date</label>
+                                <p class="mb-0">January 15, 2024</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small fw-semibold text-muted">End Date</label>
+                                <p class="mb-0">February 15, 2024</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small fw-semibold text-muted">Budget</label>
+                                <p class="mb-0">$45,000</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small fw-semibold text-muted">Client</label>
+                                <p class="mb-0">Acme Corporation</p>
+                            </div>
+                            <div>
+                                <label class="small fw-semibold text-muted">Project Manager</label>
+                                <div class="d-flex align-items-center mt-1">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=24&h=24&fit=crop&crop=face" alt="PM" class="rounded-circle me-2" width="24" height="24">
+                                    <span>Sarah Johnson</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Team Members</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Team member" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <p class="fw-semibold mb-0">Sarah Johnson</p>
+                                        <p class="text-muted small mb-0">Project Manager</p>
+                                    </div>
+                                </div>
+                                <div class="status-dot status-online"></div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Team member" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <p class="fw-semibold mb-0">Michael Chen</p>
+                                        <p class="text-muted small mb-0">Frontend Developer</p>
+                                    </div>
+                                </div>
+                                <div class="status-dot status-online"></div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Team member" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <p class="fw-semibold mb-0">Emily Rodriguez</p>
+                                        <p class="text-muted small mb-0">UI/UX Designer</p>
+                                    </div>
+                                </div>
+                                <div class="status-dot status-away"></div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Team member" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <p class="fw-semibold mb-0">David Wilson</p>
+                                        <p class="text-muted small mb-0">Backend Developer</p>
+                                    </div>
+                                </div>
+                                <div class="status-dot status-online"></div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=40&h=40&fit=crop&crop=face" alt="Team member" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <p class="fw-semibold mb-0">Alex Thompson</p>
+                                        <p class="text-muted small mb-0">QA Engineer</p>
+                                    </div>
+                                </div>
+                                <div class="status-dot status-offline"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Files -->
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center bg-white py-3">
+                            <h5 class="card-title mb-0">Project Files</h5>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-upload me-1"></i>Upload
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center p-2 rounded hover-bg-light mb-2">
+                                <div class="file-icon file-pdf me-3">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small fw-semibold mb-0">Project Requirements.pdf</p>
+                                    <p class="text-muted small mb-0">2.4 MB • 3 days ago</p>
+                                </div>
+                                <button class="btn btn-link btn-sm text-muted p-0">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-2 rounded hover-bg-light mb-2">
+                                <div class="file-icon file-image me-3">
+                                    <i class="fas fa-file-image"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small fw-semibold mb-0">Homepage Mockup.png</p>
+                                    <p class="text-muted small mb-0">1.8 MB • 5 days ago</p>
+                                </div>
+                                <button class="btn btn-link btn-sm text-muted p-0">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="d-flex align-items-center p-2 rounded hover-bg-light">
+                                <div class="file-icon file-excel me-3">
+                                    <i class="fas fa-file-excel"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <p class="small fw-semibold mb-0">Project Timeline.xlsx</p>
+                                    <p class="text-muted small mb-0">156 KB • 1 week ago</p>
+                                </div>
+                                <button class="btn btn-link btn-sm text-muted p-0">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Time Tracking -->
+                    <div class="card">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="card-title mb-0">Time Tracking</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <div class="display-6 fw-bold text-primary">156.5</div>
+                                <div class="small text-muted">Total Hours Logged</div>
+                            </div>
+                            <div class="text-start">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">This Week</span>
+                                    <span class="fw-semibold">32.5 hrs</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Last Week</span>
+                                    <span class="fw-semibold">28.0 hrs</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Average/Week</span>
+                                    <span class="fw-semibold">31.3 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Footer -->
+         <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+            <p class="m-0">Copyright © 2024. All Rights Reserved. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >Themes By TemplateRise</a></p>
+        </div>
+        </div>
+
+         <!-- Add Modal -->
+        <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="addProjectoffcanvasRight" aria-labelledby="addProjectoffcanvasRightLabel">
+            <div class="offcanvas-header border-bottom">
+              <h5 id="addProjectoffcanvasRightLabel">Add new project</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                 <div class="container">
+                    <form>
+                        <div class="row mb-4">
+                            <div class="col-12 mb-4">
+                                <label for="projectTitle" class="form-label">Project Title</label>
+                                <input type="text" class="form-control custom-placeholder remove-focus" id="projectTitle" placeholder="Enter project title">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="projectDesc" class="form-label">Description</label>
+                                <textarea class="form-control custom-placeholder remove-focus" id="projectDesc" rows="3" placeholder="Write a short description..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-4">
+                                <label for="status" class="form-label">Project Status</label>
+                                <select class="form-select font-size-15 remove-focus" id="status">
+                                    <option selected>Select status</option>
+                                    <option value="active">Active</option>
+                                    <option value="in_progress">In Progress</option>
+                                    <option value="planning">Planning</option>
+                                    <option value="on_hold">On Hold</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="date" class="form-label">Due Date</label>
+                                <input type="date" class="form-control custom-placeholder remove-focus" id="date" placeholder="DD/MM/YYYY">
+                            </div>
+                            <div class="col-lg-12 mb-4">
+                                <label class="form-label">Assign Team Members</label>
+                                <input type="text" class="form-control custom-placeholder remove-focus" placeholder="Enter names or emails (comma-separated)">
+                                <div class="form-text">This can be enhanced later with multi-select or user picker.</div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn bg-primary text-white py-2 px-4">Save</button>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+        </div>
+
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/plugin/datatable/datatables.min.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/plugin/fullcalendar/index.global.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js"></script>
+    <script  src="./assets/js/main.js"></script>
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const taskTitle = this.parentElement.querySelector('h6');
+                if (this.checked) {
+                    taskTitle.classList.add('task-completed');
+                } else {
+                    taskTitle.classList.remove('task-completed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

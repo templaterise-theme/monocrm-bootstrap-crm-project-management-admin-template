@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email - CRM Admin Dashboard</title>
+    <!-- Stylesheets -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/plugin/datatable/datatables.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+                <!-- Sidebar -->
+               <div class="sidebar-header">
+                   <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" class="large-logo-img" alt="logo large"></a></div>
+                   <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" class="small-logo-img" alt="logo small"></a></div>
+               </div>
+               <div class="sidebar-body  custom-scrollbar">
+                     <ul class="sidebar-menu">
+                        <li><a href="index.html" class=" sidebar-link active"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
+                        <li><a href="customer.html" class="sidebar-link"><i class="fa-solid fa-users"></i><p>Customer</p></a></li>
+                        <li><a href="board.html" class=" sidebar-link"><i class="fa-regular fa-clipboard"></i><p>Board</p></a></li>
+                        <li><a href="project.html" class=" sidebar-link"><i class="fa-solid fa-building"></i><p>Project</p></a></li>
+                        <li><a href="department.html" class=" sidebar-link"><i class="fa-solid fa-chalkboard-user"></i><p>Department</p></a></li>
+                        <li><a href="chat.html" class=" sidebar-link"><i class="fa-solid fa-comment"></i><p>Chat</p></a></li>
+                        <li><a href="calender.html" class=" sidebar-link"><i class="fa-regular fa-calendar-days"></i><p>Calendar</p></a></li>
+                        <li><a href="#" class="sidebar-link submenu-parent active"><i class="fa-solid fa-envelope"></i><p>Mailbox <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu open">
+                                <li><a href="email.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Eamil</p></a></li>
+                                <li><a href="view-email.html" class="submenu-link active"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">View</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-brands fa-pagelines"></i><p>Pages <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Login</p></a></li>
+                                <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Register</p></a></li>
+                                <li><a href="forgot-password.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Forgot password</p></a></li>
+                                <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">404 page</p></a></li>
+                                <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">500 page</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-table"></i><p>Table <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="table-bootstrap.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Bootstrap</p></a></li>
+                                <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">DataTable</p></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Components <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                            <ul class="sidebar-submenu">
+                                <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Form Element</p></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+               </div>
+        </div>
+         <!-- Header -->
+         <div class="header d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+              <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+              <div class="d-none d-md-block d-lg-block">
+                  <div class="input-group flex-nowrap">
+                      <span class="input-group-text" id="addon-wrapping"><i class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+                      <input type="text" class="form-control search-input border-l-none ps-0 remove-focus" placeholder="Search anything" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex align-items-center">
+              <ul class="nav d-flex align-items-center">
+                  <!-- Messages Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 position-relative header-nav-item"  role="button" 
+                        data-bs-toggle="dropdown" 
+                        data-bs-offset="0,0" 
+                        aria-expanded="false">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23.0753 13.2492H19.3053C18.2437 13.2492 17.3012 13.8342 16.8245 14.7875L15.9145 16.5858C15.6978 17.0192 15.2645 17.29 14.7878 17.29H11.2345C10.8987 17.29 10.422 17.2142 10.1078 16.5858L9.19782 14.7983C8.72116 13.8558 7.76783 13.26 6.71699 13.26H2.92533C2.50283 13.26 2.16699 13.5958 2.16699 14.0183V17.55C2.16699 21.4825 4.52866 23.8333 8.47199 23.8333H17.5503C21.2662 23.8333 23.552 21.7967 23.8337 18.1783V14.0075C23.8337 13.5958 23.4978 13.2492 23.0753 13.2492Z" fill="#358AEC"/>
+                          <path d="M13.8125 2.16667C13.8125 1.7225 13.4442 1.35417 13 1.35417C12.5558 1.35417 12.1875 1.7225 12.1875 2.16667V4.33333H13.8125V2.16667Z" fill="#358AEC"/>
+                          <path d="M23.8337 10.6275V11.7542C23.5953 11.6675 23.3353 11.6242 23.0753 11.6242H19.3053C17.6262 11.6242 16.1203 12.5558 15.3728 14.0508L14.5603 15.6542H11.462L10.6495 14.0617C9.90199 12.5558 8.39616 11.6242 6.71699 11.6242H2.92533C2.66533 11.6242 2.40533 11.6675 2.16699 11.7542V10.6275C2.16699 6.68417 4.51783 4.33333 8.46116 4.33333H12.1878V7.78917L11.4078 7.00917C11.0937 6.695 10.5737 6.695 10.2595 7.00917C9.94533 7.32333 9.94533 7.84333 10.2595 8.1575L12.4262 10.3242C12.437 10.335 12.4478 10.335 12.4478 10.3458C12.5237 10.4108 12.5995 10.465 12.6862 10.4975C12.7945 10.5408 12.892 10.5625 13.0003 10.5625C13.1087 10.5625 13.2062 10.5408 13.3037 10.4975C13.4012 10.465 13.4987 10.4 13.5745 10.3242L15.7412 8.1575C16.0553 7.84333 16.0553 7.32333 15.7412 7.00917C15.427 6.695 14.907 6.695 14.5928 7.00917L13.8128 7.78917V4.33333H17.5395C21.4828 4.33333 23.8337 6.68417 23.8337 10.6275Z" fill="#358AEC"/>
+                        </svg>
+                        <!-- <i class="fa-regular fa-message font-size-20"></i> -->
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Chat Timeline -->
+                              <ul class="timeline">
+                                  <!-- Item 1 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">We talked about a project...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 30 min ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 2 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-2.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">You sent an email to the client...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 1 hour ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 3 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-3.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Meeting with the design team...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 hours ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 4 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-4.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Reviewed the project documents...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> Yesterday</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <!-- Item 5 -->
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/avatar-5.jpg">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Finalized the project timeline...</h6>
+                                              <small class="d-block"><i class="fa-solid fa-clock"></i> 2 days ago</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          <a class="all-notification" href="#">See all message <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                  <!-- Notifications Dropdown -->
+                  <li class="nav-item me-4">
+                      <a href="#" class="text-color-1 notification header-nav-item" 
+                          role="button" 
+                          data-bs-toggle="dropdown" 
+                          data-bs-offset="0,0" 
+                          aria-expanded="false">
+                          <i class="fa-regular fa-bell font-size-24"></i>
+                          <div class="marker"></div>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end mt-4">
+                          <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                              <!-- Notifications Timeline -->
+                              <ul class="timeline">
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Smith uploaded a new report</h6>
+                                              <small class="d-block">10 December 2023 - 08:15 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-info">
+                                              AP
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">New Appointment Scheduled</h6>
+                                              <small class="d-block">10 December 2023 - 09:45 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-success">
+                                              <i class="fa fa-check-circle"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Patient checked in at reception</h6>
+                                              <small class="d-block">10 December 2023 - 10:20 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2">
+                                              <img alt="image" width="50" src="./assets/images/profile.png">
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Dr Alice shared a prescription</h6>
+                                              <small class="d-block">10 December 2023 - 11:00 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-danger">
+                                              EM
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Emergency Alert: Critical Patient</h6>
+                                              <small class="d-block">10 December 2023 - 11:30 AM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="timeline-panel">
+                                          <div class="media me-2 media-primary">
+                                              <i class="fa fa-calendar-alt"></i>
+                                          </div>
+                                          <div class="media-body">
+                                              <h6 class="mb-1">Next Appointment Reminder</h6>
+                                              <small class="d-block">10 December 2023 - 12:00 PM</small>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                              
+                          </div>
+                          <a class="all-notification" href="#">See all notifications <i class="fas fa-arrow-right"></i></a>
+                      </div>
+                  </li>
+                   <!-- User Profile -->
+                  <li class="nav-item dropdown user-profile">
+                      <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="./assets/images/avatar-6.png" class="user-avatar" alt="">
+                          <div>
+                              <ul class="dropdown-menu mt-3">
+                                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+       <!-- Content Wrapper -->
+       <div class="content-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="email-container mt-4">
+            <div class="row g-0">
+                <div class="col-auto email-sidebar" id="Emailsidebar">
+                    <div class="sidebar-inner">
+                       <button class="compose-btn" data-bs-toggle="offcanvas" data-bs-target="#addEmailoffcanvasRight" aria-controls="addEmailoffcanvasRight">
+                            <i class="fas fa-plus me-2"></i>
+                            Compose
+                        </button>
+                        <nav>
+                            <a href="#" class="nav-item active">
+                                <i class="fas fa-inbox"></i>
+                                Inbox
+                                <span class="badge-count">21</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <i class="fas fa-paper-plane"></i>
+                                Sent
+                            </a>
+                            <a href="#" class="nav-item">
+                                <i class="fas fa-file-alt"></i>
+                                Draft
+                                <span class="badge-count">2</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <i class="fas fa-star"></i>
+                                Starred
+                            </a>
+                            <a href="#" class="nav-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Spam
+                                <span class="badge-count">4</span>
+                            </a>
+                            <a href="#" class="nav-item">
+                                <i class="fas fa-trash"></i>
+                                Trash
+                            </a>
+                        </nav>
+
+                        <div class="labels-section">
+                            <div class="labels-title">Labels</div>
+                            <a href="#" class="label-item">
+                                <div class="label-dot" style="background-color: #34a853;"></div>
+                                Personal
+                            </a>
+                            <a href="#" class="label-item">
+                                <div class="label-dot" style="background-color: #4285f4;"></div>
+                                Company
+                            </a>
+                            <a href="#" class="label-item">
+                                <div class="label-dot" style="background-color: #ff9800;"></div>
+                                Important
+                            </a>
+                            <a href="#" class="label-item">
+                                <div class="label-dot" style="background-color: #ea4335;"></div>
+                                Private
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col email-main-content" id="mainContent">
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <div class="position-relative">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search mail">
+                        </div>
+                    </div>
+
+                    <!-- Toolbar -->
+                    <div class="toolbar">
+                        <input type="checkbox" class="form-check-input">
+                        <button class="toolbar-btn" title="Delete" aria-label="Delete selected emails">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="toolbar-btn" title="Archive" aria-label="Archive selected emails">
+                            <i class="fas fa-archive"></i>
+                        </button>
+                        <button class="toolbar-btn" title="Mark as spam" aria-label="Mark selected emails as spam">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </button>
+                        <button class="toolbar-btn" title="Move to" aria-label="Move selected emails">
+                            <i class="fas fa-folder"></i>
+                        </button>
+                        <div class="more-actions">
+                            <button class="refresh-btn" title="Refresh" aria-label="Refresh email list">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="toolbar-btn" title="More" aria-label="More actions">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open sidebar">
+                                <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <!-- Email View -->
+                        <div class="email-view" id="emailView">
+                        <div class="email-view-header">
+                            <a href="email.html" class="btn btn-outline-secondary btn-sm me-2"  aria-label="Back to Inbox">
+                                <i class="fas fa-arrow-left me-2"></i>Back to Inbox
+                            </a>
+                            <div class="email-actions">
+                                <button class="btn btn-outline-secondary btn-sm me-1" title="Archive" aria-label="Archive email">
+                                    <i class="fas fa-archive"></i>
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm me-1" title="Delete" aria-label="Delete email">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm me-1" title="Mark as spam" aria-label="Mark as spam">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm" title="More" aria-label="More actions">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="email-view-content">
+                            <div class="email-header">
+                                <h2 id="emailSubject">Hey Katy, Soufflé apple pie caramels soufflé tiramisu bear claw.</h2>
+                                <div class="email-sender-info">
+                                    <div class="d-flex align-items-center mb-2"><div id="emailSenderAvatar" class="sender-initial me-3" style="background-color: rgb(52, 168, 83);">BS</div>
+                                        
+                                        <div>
+                                            <div class="fw-bold" id="emailSenderName">Barney Stinson</div>
+                                            <div class="text-muted small" id="emailSenderEmail">barney.stinson@example.com</div>
+                                        </div>
+                                        <div class="ms-auto text-muted small" id="emailDateTime">12:44 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="email-body" id="emailBody">It's going to be legen—wait for it—dary!<br><br>I've got some new strategies for our next project. It involves a lot of high-fives and possibly a suit.<br><br>Let's meet up soon to discuss the details.<br><br>Best,<br>Barney</div>
+
+                            <div class="email-attachments" id="emailAttachments">
+                                <h6>Attachments</h6>
+                                <div class="attachment-list"><div class="attachment-item"><i class="fas fa-file-pdf"></i><span>SuitUpPlan.pdf</span></div></div>
+                            </div>
+                        </div>
+
+                        <div class="reply-section">
+                            <div class="reply-buttons mb-3">
+                                <button class="btn btn-outline-primary me-2 mb-2" id="replyBtn" aria-label="Reply to email">
+                                    <i class="fas fa-reply me-2"></i>Reply
+                                </button>
+                                <button class="btn btn-outline-primary me-2 mb-2" id="replyAllBtn" aria-label="Reply all to email">
+                                    <i class="fas fa-reply-all me-2"></i>Reply All
+                                </button>
+                                <button class="btn btn-outline-primary mb-2" id="forwardBtn" aria-label="Forward email">
+                                    <i class="fas fa-share me-2"></i>Forward
+                                </button>
+                            </div>
+
+                            <div class="reply-form d-none" id="replyForm">
+                                <div class="mb-3">
+                                    <label for="replyTo" class="form-label">To</label>
+                                    <input type="email" class="form-control custom-form-control remove-focus" id="replyTo" readonly="" aria-label="Reply to recipient">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="replySubject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control custom-form-control remove-focus" id="replySubject" readonly="" aria-label="Reply subject">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="replyMessage" class="form-label">Message</label>
+                                    <textarea class="form-control custom-form-control remove-focus" id="replyMessage" rows="6" placeholder="Type your reply..." aria-label="Reply message"></textarea>
+                                </div>
+                                <div class="reply-actions">
+                                    <button type="button" class="btn btn-primary me-2" id="sendReplyBtn" aria-label="Send reply">
+                                        <i class="fas fa-paper-plane me-2"></i>Send
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary py-2" id="cancelReplyBtn" aria-label="Cancel reply">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+         <!-- Footer -->
+         <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+            <p class="m-0">Copyright © 2024. All Rights Reserved. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >Themes By TemplateRise</a></p>
+        </div>
+        </div>
+
+
+     <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="addEmailoffcanvasRight" aria-labelledby="addEmailoffcanvasRightLabel">
+            <div class="offcanvas-header border-bottom">
+              <h5 id="addCustomeroffcanvasRightLabel">New Message</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                    <form id="composeForm" class="compose">
+                            <div class="form-group">
+                                <label for="toField" class="form-label">To</label>
+                                <input type="email" class="form-control custom-form-control remove-focus" id="toField" placeholder="Recipients" aria-label="To recipient">
+                            </div>
+                            <div class="form-group">
+                                <label for="subjectField" class="form-label">Subject</label>
+                                <input type="text" class="form-control custom-form-control remove-focus" id="subjectField" placeholder="Subject" aria-label="Email subject">
+                            </div>
+                            <div class="form-group message-body-group">
+                                <label for="messageBody" class="form-label">Message</label>
+                                <textarea class="form-control custom-form-control remove-focus" id="messageBody" placeholder="Compose your message..." aria-label="Compose message"></textarea>
+                            </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <button type="button" class="btn btn-primary" id="sendBtn" aria-label="Send email">
+                                <i class="fas fa-paper-plane me-2"></i>Send
+                            </button>
+                            <button type="button" class="btn btn-icon" id="attachBtn" aria-label="Attach file">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button type="button" class="btn btn-icon" id="formatBtn" aria-label="Format text">
+                                <i class="fas fa-font"></i>
+                            </button>
+                            <button type="button" class="btn btn-icon" id="emojiBtn" aria-label="Insert emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+
+                    </form>
+            </div>
+        </div>
+
+         <div id="EmailsidebarOverlay" class="email-sidebar-overlay d-none"></div>
+
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/plugin/datatable/datatables.min.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
+</body>
+</html>
